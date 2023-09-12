@@ -9,18 +9,18 @@ This is a power Bi project on suicide global rates. The aim of the project is to
 ** NB **: _The data is derived from the Kaggle dataset [](https://www.kaggle.com/datasets/omkargowda/suicide-rates-overview-1985-to-2021)_
 ## Data Definition
 Our dataset downloaded from kaggle contained :
-country
-year
-sex
-age
-suicides_no
-population
-suicides/100k pop
-country-year
-HDI for year
-gdp_for_year
-gdp_per_capita
-generation
+- country
+- year
+- sex
+- age
+- suicides_no
+- population
+- suicides/100k pop
+- country-year
+- HDI for year
+- gdp_for_year
+- gdp_per_capita
+- generation
 ## Problem statement
 1. Is there any variation of suicide by gender? How has this evolved over time?
 2. Which age group is more vulnerable to suicide?
@@ -42,6 +42,20 @@ Some of the skills used include:
 
 
 ## Data transformation
-The age columns was in the wide format where the columns were unpivoted to
+Data was loaded into the powerquery editor and an overview of the columns was checked.
+There were 31756 rows and 12 columns. Some of the columns contained null values.
+The data types were changed accordingly.
+![](country.png)
 
+The country column had no null values and no errors the data type is text.
+
+![](HDI.png)
+
+the hdi column had 19456 empty rows and as this would greatly influence our results the column will be dropped.
+
+![](Suicide_no.png)
+
+The column hadd 1200 empty rows. The empty rows were removed.
+Since we had the country and year column the country-year column was dropped
+A new column for region was added to divide the countries to continents
 ## Data Analysis and Visualization
