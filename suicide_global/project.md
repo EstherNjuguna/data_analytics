@@ -1,4 +1,4 @@
-# Global Suicide Rates (1950 - 2021)
+# Global Suicide Rates (1985 - 2020)
 > "Creating Hope Through Action" Theme 2020 - 2023
 ## Introduction
 
@@ -57,5 +57,7 @@ the hdi column had 19456 empty rows and as this would greatly influence our resu
 
 The column hadd 1200 empty rows. The empty rows were removed.
 Since we had the country and year column the country-year column was dropped
+
 A new column for region was added to divide the countries to continents
+The rows with United States were made to United States of America,  Czechia Republic and Czechia were made to Czechia, Saint Vincent and Grenadines was made to Saint Vincent and the Grenadines for uniformity
 ## Data Analysis and Visualization
