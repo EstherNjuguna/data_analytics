@@ -61,3 +61,5 @@ Since we had the country and year column the country-year column was dropped
 A new column for region was added to divide the countries to continents
 The rows with United States were made to United States of America,  Czechia Republic and Czechia were made to Czechia, Saint Vincent and Grenadines was made to Saint Vincent and the Grenadines for uniformity
 ## Data Analysis and Visualization
+#### Is there any variation of suicide by gender? How has this evolved over time?
+
