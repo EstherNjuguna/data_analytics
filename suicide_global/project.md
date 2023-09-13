@@ -64,6 +64,7 @@ The rows with United States were made to United States of America,  Czechia Repu
 #### Is there any variation of suicide by gender? How has this evolved over time?
 ![](img/Gender.png)
 
+
 As seen in the data, men have almost 3 times risk of dying by suicide as compared to women.
 This trend is observed across all age groups and over time
 
@@ -86,3 +87,10 @@ Europe seems to have the highest suicide rates at around 3.6 million deaths whil
 
 Russian Federation had the highest suicide rates(1.24 Million) followed by USA. In comparison to the population. China has the highest population at 1.4 billion.
 ![](img/Avg.png)
+
+
+
+![image](https://github.com/EstherNjuguna/data_analytics/assets/32929251/98b6fa89-d6a8-40c7-97e6-36d783f41a84)
+
+
+
