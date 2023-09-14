@@ -100,7 +100,7 @@ The Republic of Korea has the highest suicide rates
 
 #### Which countries have the least Suicide rates?
 
-
+![](img/lowest_suicide.png)
 
 
 #### Suicide variation across regions over time
@@ -117,7 +117,6 @@ Asia has had the second highest rates a sudden rise was noted rom 2016 to around
 
 No significant contribution has been noted by gross average gdp and suicide rates
 
-#### GDP per Region and suicide rates
 
 
 ## CONCLUSION
