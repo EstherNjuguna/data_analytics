@@ -1,5 +1,6 @@
 # Global Suicide Rates (1985 - 2020)
 > "Creating Hope Through Action" Theme 2020 - 2023
+
 ## Introduction
 
 Suicide is the act or an instance of taking one's own life voluntarily and intentionally (Meriam-Webster Dictionary).
