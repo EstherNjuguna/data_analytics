@@ -80,8 +80,11 @@ Apart from 2016, where all seemed to have a sudden dip. There has been a radual 
 The age group 35-54 has the highest record of cumulative  deaths
 ![](img/Age.png)
 
-When the rate is considered using suicide by 100k population. The age group 75 has the highest rates
-![](Age_Rate.png)
+When the rate is considered using suicide by 100k population. The age group 75+ has the highest rates
+![](img/Age_Rate.png)
+
+
+Region with highest 75+ suicides
 #### How do different regions and countries vary in terms of suicide rate?
 
 ![](img/Region.png)
@@ -116,3 +119,10 @@ No significant contribution has been noted by gross average gdp and suicide rate
 
 #### GDP per Region and suicide rates
 
+
+## CONCLUSION
+Suicide is still a big problem globally and mitigation measures are to be put into place. Some death especially those over 75  have been attributed in some regions to their culture. 
+African data is not very accurate which calls for more African nations to have their data well captured.
+## Recommendation
+Research and documentation of African countries data.
+Sensitization of the mass population on the suicide menace and how to identify it.
