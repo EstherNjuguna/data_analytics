@@ -1,3 +1,5 @@
+
+![](img/2023-09-14.png)
 # Global Suicide Rates (1985 - 2020)
 > "Creating Hope Through Action" Theme 2020 - 2023
 
