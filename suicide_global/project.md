@@ -6,7 +6,9 @@ Suicide is the act or an instance of taking one's own life voluntarily and inten
 
 According to WHO, More than 700 000 persons die by suicide every year globally. Suicide is the fourth leading cause of death among 15-29 year olds.
 This is a power Bi project on suicide global rates. The aim of the project is to analyse and derive insights with regards to suicide and see how we can help resolve the menace.
-** NB **: _The data is derived from the Kaggle dataset ![](https://www.kaggle.com/datasets/omkargowda/suicide-rates-overview-1985-to-2021)_
+
+**NB** : _The data is derived from a [Kaggle](https://www.kaggle.com/datasets/omkargowda/suicide-rates-overview-1985-to-2021) dataset_
+
 ## Data Definition
 Our dataset downloaded from kaggle contained :
 - country
@@ -75,7 +77,7 @@ Apart from 2016, where all seemed to have a sudden dip. There has been a radual 
 
 #### Which age group is more vulnerable to suicide?
 
-The age group 35-49 appears to be more susceptible to suicide
+The age group 35-54 appears to be more susceptible to suicide
 ![](img/Age.png)
 
 #### How do different regions and countries vary in terms of suicide rate?
@@ -92,5 +94,20 @@ Russian Federation had the highest suicide rates(1.24 Million) followed by USA. 
 
 ![image](https://github.com/EstherNjuguna/data_analytics/assets/32929251/98b6fa89-d6a8-40c7-97e6-36d783f41a84)
 
+#### Suicide variation across regions over time
+![](img/Region_Year.png)
 
+
+Europe has had the highest suicide rates but since 2016 has seen a sudden decrease.
+Asia has had the second highest rates a sudden rise was noted rom 2016 to around 2018.
+
+#### Which countries have the least Suicide rates?
+
+#### Does the gdp have a role in the suicide rate?
+
+![](img/GDP.png)
+
+No significant contribution has been noted by gross average gdp and suicide rates
+
+#### GDP per Region and suicide rates
 
