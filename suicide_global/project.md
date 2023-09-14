@@ -77,9 +77,11 @@ Apart from 2016, where all seemed to have a sudden dip. There has been a radual 
 
 #### Which age group is more vulnerable to suicide?
 
-The age group 35-54 appears to be more susceptible to suicide
+The age group 35-54 has the highest record of cumulative  deaths
 ![](img/Age.png)
 
+When the rate is considered using suicide by 100k population. The age group has the highest rates
+![](Suicide_no.png)
 #### How do different regions and countries vary in terms of suicide rate?
 
 ![](img/Region.png)
@@ -87,12 +89,16 @@ Europe seems to have the highest suicide rates at around 3.6 million deaths whil
 
 ![](img/Africa.png)
 
-Russian Federation had the highest suicide rates(1.24 Million) followed by USA. In comparison to the population. China has the highest population at 1.4 billion.
-![](img/Avg.png)
 
-
+The Republic of Korea has the highest suicide rates
+![](img/countries.png)
 
 ![image](https://github.com/EstherNjuguna/data_analytics/assets/32929251/98b6fa89-d6a8-40c7-97e6-36d783f41a84)
+
+#### Which countries have the least Suicide rates?
+
+
+
 
 #### Suicide variation across regions over time
 ![](img/Region_Year.png)
@@ -101,7 +107,6 @@ Russian Federation had the highest suicide rates(1.24 Million) followed by USA. 
 Europe has had the highest suicide rates but since 2016 has seen a sudden decrease.
 Asia has had the second highest rates a sudden rise was noted rom 2016 to around 2018.
 
-#### Which countries have the least Suicide rates?
 
 #### Does the gdp have a role in the suicide rate?
 
