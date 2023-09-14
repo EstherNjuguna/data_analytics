@@ -80,8 +80,8 @@ Apart from 2016, where all seemed to have a sudden dip. There has been a radual 
 The age group 35-54 has the highest record of cumulative  deaths
 ![](img/Age.png)
 
-When the rate is considered using suicide by 100k population. The age group has the highest rates
-![](Suicide_no.png)
+When the rate is considered using suicide by 100k population. The age group 75 has the highest rates
+![](Age_Rate.png)
 #### How do different regions and countries vary in terms of suicide rate?
 
 ![](img/Region.png)
