@@ -2,7 +2,7 @@
 # Sales Data Analysis
 ## Introduction
 This is the first project under the Meriskill internship.
-It involves data from a store that sells various products.  w
+It involves data from a store that sells various products.  
 ## Technologies Used
 - Microsoft Excel
 - PowerQuery
