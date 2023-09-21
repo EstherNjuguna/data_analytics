@@ -1,6 +1,6 @@
 
 # Sales Data Analysis
-
+![](images/Untitled.jpeg)
 ## Introduction
 This is the first project under the Meriskill internship.
 It involves data from a store that sells various products.  
@@ -42,8 +42,25 @@ A total of 209K products had been ordered across the 9 Cities
 ![](images/year.png)
 
 December is noted to have the highest sales at $4.6 Million while January had the least at $1.8M. Flactuations were noted mid year too.
-![](quarter_
-Its difficult to quantify January 2020 sales as it only had date 1.
+Data from January 2020 had only one day hence it'd be difficulty to compare the years.
 
-  
+![](images/quareter_revenue.png)
+
+
+
+### What are the best selling products?
+![](images/top_revenue.png)
+
+Macbook Pro had the highest revenue at ($8.0M), followed by iPhone($4.8M)  and third being Thinkpad Laptop($4.1M).
+The least revenue was accounted for by AAA and AA batteries
+
+![](images/Least_revenue.png)
+
+We tried to find out why the named products had the least revenue
+It was suprising to find that despite the AAA batteries being least in revenue generation, they had a very high order rate. The low revenue could be attributed to their low unit price.
+
+![](images/top_sales.png)
+
+
+  ![](images/Least_products.png)
     
