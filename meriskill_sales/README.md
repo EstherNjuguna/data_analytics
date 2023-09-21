@@ -1,5 +1,6 @@
 
 # Sales Data Analysis
+
 ## Introduction
 This is the first project under the Meriskill internship.
 It involves data from a store that sells various products.  
@@ -38,7 +39,7 @@ The data had 10 columns:
 The store had a total sales of $ 34.49 Million.
 A total of 209K products had been ordered across the 9 Cities
 ###  Find out the business trend over time
-![](year.png)
+![](images/year.png)
 
 December is noted to have the highest sales at $4.6 Million while January had the least at $1.8M. Flactuations were noted mid year too.
 ![](quarter_
