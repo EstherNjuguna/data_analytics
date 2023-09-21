@@ -3,7 +3,7 @@
 ![](images/Untitled.jpeg)
 ## Introduction
 
-![](images/Screenshot(72).png)
+![](images/dashboard.png)
 
 This is the first project under the Meriskill internship.
 It involves data from a store that sells various products.  
