@@ -6,6 +6,16 @@ output:
     fig_height: 5
 ---
 
+```{r}
+ library(readr)
+ library(purrr)
+ library(ggplot2)
+ library(dplyr)
+ library(tidyr)
+ library(corrplot)
+library(rmarkdown)
+```
+
 ## Introduction
 
 This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective is to predict based on diagnostic measurements whether a patient has diabetes.
@@ -37,7 +47,7 @@ Several constraints were placed on the selection of these instances from a large
 The data was imported into R and run head to visualize the first 6 rows
 
 ```{r echo=FALSE}
- diabetes <- read_csv("~/data_analytics/meriskill_diabetes/diabetes.csv")
+ diabetes <- read.csv("~/data_analytics/meriskill_diabetes/diabetes.csv")
   head(diabetes)
    summary(diabetes)
 ```
