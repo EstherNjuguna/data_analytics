@@ -103,15 +103,100 @@ diabetes <- diabetes %>%
 
 ```{r , echo = FALSE}
  ## categorize age vs the outcome
- ggplot(diabetes, aes(x = age_cat, fill = Outcome)) +
+ ggplot(diabetes, aes(x = age_cat)) +
    geom_bar(fill = "blue") +
    labs(
-     title = "Age Category vs. Outcome",
-     x = "Age Category",
-     y = "Count"
+     title = "Distribution across Age Categories",
+     x = " ",
+     y = ""
    ) +
-   scale_fill_brewer(palette = "Set3") +
-   theme_minimal()
+  
+   theme_minimal()+
+   theme(
+    panel.grid.major = element_blank(),  # Hide major grid lines
+    panel.grid.minor = element_blank(),  # Hide minor grid lines
+    axis.text.x = element_text(angle = 0, hjust = 0.5)  # Adjust x-axis label alignment
+  )
+```
+
+### Number of Pregnancies
+
+```{r echo=FALSE}
+ggplot(diabetes, aes(Pregnancies,fill= "blue"))+
+  geom_histogram(binwidth = 2)+
+   labs(
+    title = "Number of Pregnancies",
+    y ="",
+    x =""
+  ) +
+  scale_fill_manual(values = c("blue" = "blue"))+
+   theme(
+    panel.grid.major = element_blank(),  # Hide major grid lines
+    panel.grid.minor = element_blank(),  # Hide minor grid lines
+    axis.text.x = element_text(angle = 0, hjust = 0.5)  # Adjust x-axis label alignment
+  )
+```
+
+### Comparison of BMI and outcome
+
+```{r}
+diabetes <- diabetes %>%
+  mutate(
+    BMI_cat = case_when(
+      BMI < 18.5 ~ 'Underweight',
+      BMI >= 18.5 & BMI < 25 ~ 'Normal',
+      BMI >= 25 & BMI < 30 ~ 'Obese',
+      BMI >= 30 & BMI < 35 ~ 'Moderate Obese',
+      BMI >= 35 & BMI < 40 ~ 'Severe Obese',
+      BMI >= 40 & BMI < 45 ~ 'Very severe Obese',
+      BMI >= 45 & BMI < 50 ~ 'Morbid Obese',
+      BMI >= 50 & BMI <= 60 ~ 'Super Obese',
+      BMI > 60 ~ 'Hyper obese',
+      TRUE ~ 'Unknown'  # Default category for other cases
+    )
+  )
+
+# View the resulting dataset
+grouped_counts <- diabetes %>%
+  group_by(BMI_cat) %>%
+  summarize(count = n()) %>%
+  arrange(desc(count)) 
+grouped_counts
+```
+
+```{r echo=FALSE}
+ggplot(diabetes, aes(BMI_cat, y = Glucose)) +
+  geom_bar(stat = "summary", fun = "mean",fill = "blue") +
+  labs(
+    title = "Bar Plot of Mean Glucose by BMI Category",
+    x = "",
+    y = ""
+  ) +
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),  # Hide major grid lines
+    panel.grid.minor = element_blank(),  # Hide minor grid lines
+    axis.text.x = element_text(angle = 0, hjust = 0.5)  # Adjust x-axis label alignment
+  )
+```
+
+### Diabtes edigree Function and Age
+
+```{r echo=FALSE}
+ggplot(diabetes, aes(BMI_cat, y = DiabetesPedigreeFunction)) +
+  geom_bar(stat = "summary", fun = "mean",fill = "blue") +
+  labs(
+    title = "Bar Plot of DPF by BMI Category",
+    x = "",
+    y = ""
+  ) +
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),  # Hide major grid lines
+    panel.grid.minor = element_blank(),  # Hide minor grid lines
+    axis.text.x = element_text(angle = 0, hjust = 0.5)  # Adjust x-axis label alignment
+  )
+
 ```
 
 ### How do the various paramaters relate to each other
@@ -153,4 +238,23 @@ ggplot(diabetes, aes(x = Outcome, fill = Outcome)) +
     axis.text.x = element_text(angle = 0, hjust = 0.5)  # Adjust x-axis label alignment
   )
 
+```
+
+## comparison of age and outcome
+
+```{r}
+ ggplot(diabetes, aes(x = age_cat, fill = Outcome)) +
+   geom_bar() +
+   labs(
+     title = "Age Category vs. Outcome",
+     x = " ",
+     y = ""
+   ) +
+scale_fill_manual(values = c("Yes" = "blue", "No" = "red")) +  
+   theme_minimal()+
+   theme(
+    panel.grid.major = element_blank(),  # Hide major grid lines
+    panel.grid.minor = element_blank(),  # Hide minor grid lines
+    axis.text.x = element_text(angle = 0, hjust = 0.5)  # Adjust x-axis label alignment
+  )
 ```
