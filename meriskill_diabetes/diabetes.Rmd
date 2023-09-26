@@ -62,6 +62,7 @@ Looking if we had any null values in the data or any duplicated values
 
 ```{r}
 diabetes %>% map(~sum(is.na(.)))
+# duplicated
  sum(duplicated(diabetes))
 ```
 
@@ -96,13 +97,18 @@ diabetes <- diabetes %>%
        TRUE ~ 'Unknown'  # Default category for other cases
      
    ))
+ # View the resulting dataset
+
  summary(diabetes)
+ 
+ 
 ```
 
 ## Insights
 
 ```{r , echo = FALSE}
  ## categorize age vs the outcome
+
  ggplot(diabetes, aes(x = age_cat)) +
    geom_bar(fill = "blue") +
    labs(
@@ -117,6 +123,14 @@ diabetes <- diabetes %>%
     panel.grid.minor = element_blank(),  # Hide minor grid lines
     axis.text.x = element_text(angle = 0, hjust = 0.5)  # Adjust x-axis label alignment
   )
+```
+
+```{r}
+grouped_ages <- diabetes %>%
+  group_by(age_cat) %>%
+  summarize(count = n()) %>%
+  arrange(desc(count)) 
+grouped_ages
 ```
 
 ### Number of Pregnancies
