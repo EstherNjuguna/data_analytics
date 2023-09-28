@@ -30,7 +30,7 @@
    )
 min(diabetes$Age)
 max(diabetes$Age)
-# C
+# Categorize age
  diabetes <- diabetes %>%
    mutate(
      age_cat = case_when(

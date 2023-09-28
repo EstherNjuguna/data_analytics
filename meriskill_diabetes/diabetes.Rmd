@@ -272,3 +272,6 @@ scale_fill_manual(values = c("Yes" = "blue", "No" = "red")) +
     axis.text.x = element_text(angle = 0, hjust = 0.5)  # Adjust x-axis label alignment
   )
 ```
+## Recommendation
+Since more than 60% of the poplulation were obese education and lifestyle modification measures should
+introduced to the community
