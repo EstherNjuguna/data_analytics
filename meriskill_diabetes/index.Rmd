@@ -4,6 +4,9 @@ output:
   html_document:
     fig_width: 7
     fig_height: 5
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
 
 ```{r echo=FALSE}
@@ -18,11 +21,56 @@ library(rmarkdown)
 
 ## Introduction
 
-This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective is to predict based on diagnostic measurements whether a patient has diabetes.
+This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases.
+The objective is to predict based on diagnostic measurements whether a patient has diabetes.
+
+Diabetes is a chronic disease that occurs either when the pancrease does not produce enough insulin or when the body cannot use the insulin it produces.
+
+### Types of diabetes:
+
+-   -Type 1 DM - caused by an autoimmune reaction.
+    Can be diagnosed at any age but more common in the younger age.
+    Symptoms develop rapidly.
+
+-   Type II DM - The body fails to produce insulin or cannot utilize the insulin produced.
+    It develops gradually over time.
+    Can be prevented by lifestyle modification -
+
+-   Gestational DM - Develops during pregnancy.
+    Mostly after 20 weeks gestation.
+    Most clear after delivery, though there is an increased risk of developing DM later in life.
+
+-   Impaired glucose tolerance - Intermediate transitions between normal and diabetes.
+    People with impaired glucose have a high risk of progressing to type 2 DM.
+
+    Type 2 DM leads to multiple complications.
+    Microvascular and macrovascular complications.
+    They cause :
+
+-   Reduced life expectancy.
+
+-   Premature mortality and increased morbidity.
+
+-   Increased financial burden.
+
+## Epidemiology
+
+According to WHO, NCDs accounted for 74% of deaths globally of which 1.6 million deaths were diabetes related making it the 9th global mortality cause.
+
+More than 37 Million US adults have diabetes , and 1 in 5 do not know they have it.
+It is the 8th leading cause of death in the US.
+In the last twenty years, the number of adults diagnosed with diabetes has doubled.
+
+The estimated DM population in India was 77 Million with an expected rise to over 134 million in 2045.
+
+More than 50 % of people are unaware of their diabetes status (WHO, 2019).
+
+The risk of diabetes is mainly influenced by ethnicity, age, obesity, unhealthy diet and family history.
 
 ## Data Dictionary
 
-Several constraints were placed on the selection of these instances from a larger database. In particular, all patients here are females at least 21 years old of Pima Indian heritage.
+Several constraints were placed on the selection of these instances from a larger database.
+In particular, all patients here are females at least 21 years old of Pima Indian heritage.
 
 -   Pregnancies: Number of times pregnant
 
@@ -36,11 +84,39 @@ Several constraints were placed on the selection of these instances from a large
 
 -   BMI: Body mass index (weight in kg/(height in m)\^2)
 
--   DiabetesPedigreeFunction: Diabetes pedigree function. Indicates the function which scores likelihood of diabetes based on family history
+-   DiabetesPedigreeFunction: Diabetes pedigree function.
+    Indicates the function which scores likelihood of diabetes based on family history
 
 -   Age: Age (years)
 
--   Outcome: Class variable (0 or 1). If patient had diabetes 1 = Yes, 0 = No.
+-   Outcome: Class variable (0 or 1).
+    If patient had diabetes 1 = Yes, 0 = No.
+
+## Problem Statement
+
+1.  What is the distribution of the number of pregnancies among the female Pima Indian patients in the dataset?
+
+2.  How does the distribution of plasma glucose concentration vary among patients with and without diabetes?
+
+3.  Is there a correlation between diastolic blood pressure and the likelihood of diabetes in these patients?
+
+4.  How does the 2-hour serum insulin level differ between patients with and without diabetes?
+
+5.  What is the distribution of BMI (Body Mass Index) among these patients, and does it correlate with the presence of diabetes?
+
+6.  What is the distribution of the diabetes pedigree function scores in the dataset?
+
+7.  How does age vary among patients with diabetes and those without diabetes?
+
+8.  What is the overall prevalence of diabetes (Outcome = 1) among these Pima Indian female patients?
+
+9.  Are there any noticeable trends or patterns in the data that suggest certain factors are more strongly associated with diabetes among this population?
+
+10. Can a predictive model be developed to estimate the likelihood of diabetes based on these features?
+
+11. Are there any relationships or interactions between the variables that are worth exploring, such as age and BMI, or glucose levels and insulin levels?
+
+12. Can insights be gained about the hereditary factors (DiabetesPedigreeFunction) and their impact on diabetes in this population?
 
 ## Understand the data
 
@@ -52,7 +128,8 @@ The data was imported into R and run head to visualize the first 6 rows
    summary(diabetes)
 ```
 
-Also looked at the dimensions of the data. The dataset had 768 rows and 9 columns
+Also looked at the dimensions of the data.
+The dataset had 768 rows and 9 columns
 
 ```{r}
 dim(diabetes)
@@ -62,7 +139,8 @@ dim(diabetes)
 colnames(diabetes)
 ```
 
-Looking if we had any null values in the data or any duplicated values. No null values were present.
+Looking if we had any null values in the data or any duplicated values.
+No null values were present.
 
 ```{r echo=FALSE}
 diabetes %>% map(~sum(is.na(.)))
@@ -156,7 +234,8 @@ grouped_ages
 
 ### Number of Pregnancies
 
-The mean number of pregnancies was around 3 with the data being skewed to the left. A few extremes having above 11 pregnancies accounting for 4.43%
+The mean number of pregnancies was around 3 with the data being skewed to the left.
+A few extremes having above 11 pregnancies accounting for 4.43%
 
 ```{r eval=FALSE, include=FALSE}
 number <- diabetes %>%
@@ -188,7 +267,7 @@ ggplot(diabetes, aes(Pregnancies,fill= "blue"))+
 Those who had higher number of pregnancies had a higher chance of being diabetic.
 
 ```{r echo=FALSE}
-ggplot(diabetes, aes(Pregnancies, Outcome))+
+ggplot(diabetes, aes(x = Outcome, y = Pregnancies, group = Outcome))+
 geom_boxplot() +
 labs(
     title = "Comparison of pregnancies and outcome",
@@ -203,7 +282,9 @@ labs(
 
 ### BMI numbers
 
-About 61.98 % of the population had a BMI of above 30 which is considered as being obese. 1.04% had a BMI of above 50 which even though possible could be an outlier. 0.52% percent of the population were underweight with a BMI \< 18.5
+About 61.98 % of the population had a BMI of above 30 which is considered as being obese.
+1.04% had a BMI of above 50 which even though possible could be an outlier.
+0.52% percent of the population were underweight with a BMI \< 18.5
 
 ```{r echo=FALSE}
 diabetes <- diabetes %>%
@@ -253,9 +334,10 @@ ggplot(diabetes, aes(BMI)) +
 
 ```
 
-### Diabetes pedigree Function and BMI
+### Diabetes Pedigree Function and BMI
 
-The super Obese, Severe Obese and very severe obese had the highest diabetes pedigree function. This in itself is not a good measure since even the underweight still have a high DPF
+The super Obese, Severe Obese and very severe obese had the highest diabetes pedigree function.
+This in itself is not a good measure since even the underweight still have a high DPF
 
 ```{r echo=FALSE}
 ggplot(diabetes, aes(BMI_cat, y = DiabetesPedigreeFunction)) +
@@ -337,17 +419,18 @@ ggplot(diabetes, aes(glucose_range, y = DiabetesPedigreeFunction)) +
 
 ```
 
-The patient with hyperglycemia or high glucose 2 hours after Oral glucose test had a higher chance of having diabetes as their outcome. Compared to the hypoglycemic who none had diabetes as the outcome.
+The patient with hyperglycemia or high glucose 2 hours after Oral glucose test had a higher chance of having diabetes as their outcome.
+Compared to the hypoglycemic who none had diabetes as the outcome.
 
 ```{r echo=FALSE}
-ggplot(diabetes, aes(x = glucose_range, fill = Outcome)) +
+ggplot(diabetes, aes(x = glucose_range, fill = as.factor(Outcome))) +
    geom_bar() +
    labs(
      title = "Glucose Range vs. Outcome",
      x = " ",
      y = " "
    ) +
-  scale_fill_manual(values = c("Yes" = "blue", "No" = "red")) +  
+  scale_fill_manual(values = c("1" = "blue", "0" = "red"))  +  
    theme_minimal()+
    theme(
     panel.grid.major = element_blank(),  # Hide major grid lines
@@ -397,7 +480,7 @@ ggplot(diabetes, aes(x = Outcome, fill = Outcome)) +
 
 ```
 
-## comparison of age and outcome
+## Comparison of Age and Outcome
 
 ```{r echo=FALSE}
  ggplot(diabetes, aes(x = age_cat, fill = Outcome)) +
@@ -416,9 +499,11 @@ scale_fill_manual(values = c("Yes" = "blue", "No" = "red")) +
   )
 ```
 
-### Blood Pressure comparison
+### Blood Pressure Comparison
 
-The study utilized Diastolic blood pressures that ranges from 60 - 80 mmHg. The BPs had a normal distribution though 11.2 % had low diastolic BP(less than 60mmHg). 62 % had normal BPs and 0.13% or 1 person had a Hypertensive crises BP \> 120 .
+The study utilized Diastolic blood pressures that ranges from 60 - 80 mmHg.
+The BPs had a normal distribution though 11.2 % had low diastolic BP(less than 60mmHg).
+62 % had normal BPs and 0.13% or 1 person had a Hypertensive crises BP \> 120 .
 
 ```{r echo=FALSE}
  ggplot(diabetes, aes(x = BloodPressure, fill = "blue")) +
@@ -485,7 +570,8 @@ scale_fill_manual(values = c("Yes" = "blue", "No" = "red")) +
 
 ## Prediction Analysis
 
-We aim to investigate the relationship between several medical predictor variables and a binary outcome variable, "Outcome." The dataset contains information related to pregnancies, BMI, insulin levels, age, blood pressure, glucose levels, and the binary outcome variable, which takes on values 1 (indicating "Yes") and 2 (indicating "No"). The aim of this analysis is to understand how these predictor variables influence the outcome.
+We aim to investigate the relationship between several medical predictor variables and a binary outcome variable, "Outcome." The dataset contains information related to pregnancies, BMI, insulin levels, age, blood pressure, glucose levels, and the binary outcome variable, which takes on values 1 (indicating "Yes") and 2 (indicating "No").
+The aim of this analysis is to understand how these predictor variables influence the outcome.
 
 ### Summary Statistics
 
@@ -534,14 +620,20 @@ The R-squared value of approximately 0.3171 suggests that about 31.71% of the va
 
 ## Conclusion
 
-In summary, this linear regression analysis suggests that several predictor variables, including "Pregnancies," "BMI," "DiabetesPedigreeFunction" and "Glucose," are statistically significant in predicting the "Outcome" variable. These variables have been found to have a significant impact on the likelihood of a positive outcome. However, variables such as "Insulin," "Age," and "BloodPressure" do not appear to play a significant role in this predictive model.
+In summary, this linear regression analysis suggests that several predictor variables, including "Pregnancies," "BMI," "DiabetesPedigreeFunction" and "Glucose," are statistically significant in predicting the "Outcome" variable.
+These variables have been found to have a significant impact on the likelihood of a positive outcome.
+However, variables such as "Insulin," "Age," and "BloodPressure" do not appear to play a significant role in this predictive model.
 
-These findings provide valuable insights into the factors that may influence the outcome under investigation. Further research and analysis may help refine the model and provide additional insights.
+These findings provide valuable insights into the factors that may influence the outcome under investigation.
+Further research and analysis may help refine the model and provide additional insights.
 
 ## Recommendation
 
 Since more than 60% of the population were obese education and lifestyle modification measures should introduced to the community.
 
-More screening measures should be introduced. Gym services and also healthy eating should be adopted.
+More screening measures should be introduced.
+Gym services and also healthy eating should be adopted.
 
 More exploration of other factors that would have been left out in this research and comparison also with other regions.
+
+Create more awareness of diabetes and its complication and need for screening.

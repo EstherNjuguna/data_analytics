@@ -1,21 +1,22 @@
 import pandas as pd
 import matplotlib as plt
-
-
-
 # Series are one dimentional arrays
 s = pd.Series([11,12,23,23,24,25,30])
-print(s.iloc[2:5])
-print(s.loc[2:5])
-print(s.multiply(2))
-#apply
+print("iNDEX loc:\n",s.iloc[2:5])
+print("Using loc\n",s.loc[2:5])
+print("Using multiply function\n:",s.multiply(2))
+#apply used for series
 def add_num(n):
     return n+2
-print(s.apply(add_num))
+print("Using apply\n:",s.apply(add_num))
 r = pd.Series([1,2,3,4,5,6,7,8])
+names = pd.Series(["Esther","Kim","Mon", "World"])
+def count_s(n):
+    return len(n)
+print("Using map to return len in a string series:\n",names.map(count_s))
 # if no ignore function is added the two series will each start from index 0
 new = pd.concat([s,r], ignore_index = True)
-print(new)
+print("Concat Strings:\n",new)
 # DataFrame - two dimentional arrays
 # df = pd.DataFrame()
 # from list
@@ -62,3 +63,15 @@ print("Sort values:\n", df.sort_values(by ="Total Rating"))
 #dropna
 print("Drop NA:", df.dropna())
 print("Is NA:\n", df.isna().sum())
+
+# Elementwise function application
+#Applymap for dataframe
+def double(n):
+    return (n *2)
+print(df.applymap(double))
+#map for series
+# Columwise Functions
+df_agg = df[["Flavor Rating", "Texture Rating", "Total Rating"]]
+def avg_row(n):
+    return n.mean()
+print("Average Rating:\n",df_agg.apply(avg_row, axis = 0))
